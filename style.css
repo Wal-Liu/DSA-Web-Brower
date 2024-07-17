@@ -1,0 +1,301 @@
+body {
+	background-image: url(Monterey08.jpg);
+	background-size: auto;
+	background-position-y: center;
+	background-position-x: center;
+}
+
+#tool_bar {
+	display: grid;
+	grid-template-columns: 10% 70% 20%;
+	border: white solid 2px;
+	border-radius: 10px;
+	padding: 5px;
+
+	
+	.control {
+		display: flex; 
+		span { 
+			margin-right: 5px; 
+		}
+		span::last-child { 
+			margin-right: 0px;
+		}
+	}
+      
+	.address_bar {
+		font-size: 16px;
+		display: flex;
+		justify-content: center;
+		span { 
+			margin-right: 5px; 
+		}
+		span:last-child { 
+			margin-right: 0px;
+		}
+		.search_bar { 
+			display: flex;
+			width: 70%;
+		}
+	}
+
+	#input_address {
+		color: white;
+		width: 100%;
+		font-size: 16px;
+		font-family: Source Code Pro;
+		border: white solid 2px;
+		border-radius: 5px;
+		background-color: #995fa183;
+		focus { 
+			outline: none
+		}
+	}
+	#menu { 
+		display: flex;
+		justify-content: right;
+	}
+}
+
+.browser {
+	display: grid;
+	grid-template-columns: 100% 0%;
+	margin-top: 5px; 
+	transition: ease 1s;
+
+	#content {
+		display: grid; 
+		grid-template-rows: 50% 50%;
+		font-family: Source Code Pro;
+		font-size: 16px;
+		border-radius: 10px;
+		padding: 5px;
+		color: white;
+		border: solid 2px white;
+	}
+	#menu_bar { 
+		opacity: 0;
+		white-space: nowrap;
+		transition: 1s;
+		color: white; 
+		border: solid 2px white; 
+		border-radius: 10px;
+		margin-left: 5px;  
+		font-family: Source Code Pro;
+		padding: 5px; 
+		max-height: 300px;
+		overflow: auto;
+	}
+}
+
+button {
+	background-color: #a468ad;
+	margin: 2px;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 7px;
+	padding: 5px;
+	font-size: 15px;
+}
+
+button:hover {
+	background-color: #87558f;
+}
+
+#go_btn {
+	margin-left: 7px;
+	margin-right: 5px;
+	border-color: white solid 2px;
+	border-radius: 5px;
+	font-size: 16px;
+	background-color: rgb(235, 88, 125);
+	transition: background-color 0, 3s ease;
+
+}
+
+#go_btn:hover {
+	background-color: #a02f4b;
+	color: white;
+}
+
+.show-history { 
+	display: grid;
+	grid-template-columns: 50% 50%;
+	margin-top: 5px; 
+	transition: ease 1s;
+
+	/* #content {
+		font-family: Source Code Pro;
+		font-size: 16px;
+		border-radius: 10px;
+		padding: 5px;
+		color: white;
+		border: solid 2px white;
+	} */
+	#menu_bar { 
+		display: grid; 
+		transition: ease 1s;
+		white-space: nowrap;
+		grid-template-columns: 30% 70%;
+		color: white; 
+		opacity: 100%;
+		border: solid 2px white; 
+		border-radius: 10px;
+		margin-left: 5px;  
+		font-family: Source Code Pro;
+		padding: 5px; 
+
+	}
+}
+
+
+.show-bookmarks {
+	display: grid;
+	grid-template-columns: 78% 22%;
+	margin-top: 5px; 
+	transition: ease 1s;
+
+
+	/* #content {
+		font-family: Source Code Pro;
+		font-size: 16px;
+		border-radius: 10px;
+		padding: 5px;
+		color: white;
+		border: solid 2px white;
+	} */
+	#menu_bar { 
+		display: grid; 
+		transition: ease 1s;
+		white-space: nowrap;
+		color: white; 
+		opacity: 100%;
+		border: solid 2px white; 
+		border-radius: 10px;
+		margin-left: 5px;  
+		font-family: Source Code Pro;
+		padding: 5px; 
+		text-overflow: ellipsis; 
+		white-space: nowrap; 
+		overflow: auto;
+
+	}
+}
+
+		
+.right-align { 
+	text-align: right; 
+}
+
+#tab_bar { 
+	display: flex; 
+	margin: 5px; 
+	div { 
+		margin-right: 5px;
+	}
+}
+
+#tab_content { 
+	margin: 5px; 
+	border: solid white 2px;
+	font-size: 17px; 
+	border-radius: 10px;
+	padding: 5px; 
+}
+
+.notification {
+	width: 400px;
+	height: 20px;
+	background-color: #01000079;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 5px;
+	color: rgb(220, 199, 199);
+	font-family: Source Code Pro;
+	overflow: hidden; /* Add this property */
+	text-overflow: ellipsis; /* Add this property */
+	white-space: nowrap; /* Add this property */
+}
+
+
+
+
+/* ------------------------------------------------------------------------------- */
+
+.overlay {
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0, 0, 0, 0.7);
+transition: opacity 500ms;
+visibility: hidden;
+opacity: 0;
+}
+.overlay:target {
+visibility: visible;
+opacity: 1;
+}
+    
+.popup {
+margin: 70px auto;
+padding: 20px;
+background: #fff;
+border-radius: 5px;
+width: 30%;
+position: relative;
+transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+margin-top: 0;
+color: #333;
+}
+.popup .close {
+position: absolute;
+top: 20px;
+right: 30px;
+transition: all 200ms;
+font-size: 30px;
+font-weight: bold;
+text-decoration: none;
+color: #333;
+}
+.popup .close:hover {
+color: #06D85F;
+}
+.popup .content {
+max-height: 30%;
+overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+.box{
+	width: 70%;
+}
+.popup{
+	width: 70%;
+}
+}
+.button {
+	background-color: #a468ad;
+	margin: 2px;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 7px;
+	padding: 5px;
+	font-size: 15px;
+}
+.button:hover {
+	background-color: #87558f;
+}
+.content {
+	white-space: pre-wrap; /* or use pre-line */
+}

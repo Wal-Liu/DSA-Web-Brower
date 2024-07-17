@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>
+                HTV Web Browser
+        </title>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <div id="tool_bar">
+                <span id="control" class = "control">
+                        <span> 
+                                <button onclick="back()"> < </button>
+                        </span>
+                        
+                        <span> 
+                                <button onclick="next()"> > </button>
+                        </span>
+                        <span> 
+                                <button onclick="newTab()"> + </button>
+                        </span>
+                </span>
+                <span id="address_bar" class="address_bar">
+                        <span class = "search_bar">
+                                <input type="text" id="input_address" placeholder="Enter Address">
+                                <button id="go_btn" onclick="navigate()"> Go </button>
+                        </span>
+                        <span>
+                                <button id="add_bkmk" onclick="addToBookmarks()"> Add To Bookmarks </button>
+                        </span>
+                </span>
+                <span id="menu">
+                        <div class="button">
+                                <a class="button" href="#popup1"> Help </a>
+                        </div>
+                        <!-- <button id="help_btn" onclick="user_manual()"> Help</button> -->
+                        
+                        <button id="history_btn" onclick="showHistory()"> History </button>
+                        <button id="menu_btn" onclick="showBookmarks()"> Bookmarks </button>
+                        <button id="menu_btn" onclick="privateMode()"> Private </button>
+                </span>
+        </div>
+
+        <div id="browser" class="browser">
+
+                <div id="content">
+                        
+                </div>
+                <span id="menu_bar">
+
+                </span>
+        </div>
+        <div id="notification-container"></div>
+
+
+
+        <div id="popup1" class="overlay">
+                <div class="popup">
+                        <h2>User Manual</h2>
+                        <a class="close" href="#"> &times </a>
+                        <div class="content">
+                                <script>
+                                function loadText() {
+                                        var xhr = new XMLHttpRequest();
+                                        xhr.onreadystatechange = function() {
+                                        if (xhr.readyState == 4 && xhr.status == 200) {
+                                        var contentDivs = document.getElementsByClassName("content");
+                                        for (var i = 0; i < contentDivs.length; i++) {
+                                                contentDivs[i].innerHTML = xhr.responseText;
+                                        }
+                                        }
+                                        }
+                                        xhr.open("GET", "Help.txt", true);
+                                        xhr.send();
+                                }
+                                loadText();
+                                </script>
+                        </div>
+                </div>
+
+        <script src="./script/Page.js"></script>
+        <script src="./script/Tab.js"></script>
+        <script src="./script/History.js"></script>
+        <script src="./script/Bookmarks.js"></script>
+        <script src="./script/TabList.js"></script>
+        <script src="./script/main.js"></script>
+</body>
